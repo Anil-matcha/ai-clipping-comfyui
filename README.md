@@ -1,10 +1,30 @@
-# AI Clipping ComfyUI Nodes
+# AI Clipping ComfyUI Nodes — Open-Source Opus Clip Alternative
 
-> **ComfyUI custom nodes for AI Clipping** — turn a long-form video into N viral-ready short clips inside ComfyUI.
+> **A free, open-source [Opus Clip](https://www.opus.pro) alternative for [ComfyUI](https://github.com/comfyanonymous/ComfyUI).**
+> Turn long-form videos, podcasts, interviews, lectures, and livestreams into ranked viral-ready short clips for **YouTube Shorts**, **TikTok**, and **Instagram Reels** — directly inside your ComfyUI workflow.
 > Single managed API call: transcription, virality ranking, dedupe, and face-tracked auto-crop all run server-side via [muapi.ai](https://muapi.ai). No local Whisper, no local LLM, no GPU.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![ComfyUI](https://img.shields.io/badge/ComfyUI-Custom%20Node-blue)](https://github.com/comfyanonymous/ComfyUI)
+[![Opus Clip Alternative](https://img.shields.io/badge/Opus%20Clip-Alternative-orange)](#why-this-vs-opus-clip-klap-vizard)
+
+> Searching for an Opus Clip alternative, a Klap.app alternative, or a Vizard / 2short.ai alternative that you can run inside ComfyUI? You're in the right place. This pack ships AI clipping, AI highlight extraction, automatic vertical reframing, face tracking, and viral-clip ranking — all as native ComfyUI nodes.
+
+---
+
+## Why This vs. Opus Clip / Klap / Vizard?
+
+| | This (AI Clipping nodes) | Opus Clip / Klap / Vizard |
+|---|---|---|
+| Native ComfyUI integration | ✅ — clip, then chain into upscale / lipsync / VHS / etc. | ❌ — closed web app |
+| Pricing | Pay-as-you-go via muapi.ai (no subscription) | Monthly subscription tiers |
+| Self-hostable / scriptable | ✅ — open-source nodes + open API | ❌ |
+| Aspect ratios | 9:16 / 1:1 / 4:5 | 9:16 / 1:1 / 4:5 |
+| Face-tracked vertical crop | ✅ | ✅ |
+| Viral-score per clip | ✅ (0–100 + hook line + reason) | ✅ |
+| Coordinates-only mode | ✅ — render with your own ffmpeg / VHS pipeline | ❌ |
+
+If you're shipping shorts at scale and want clipping to be one node in a bigger ComfyUI graph (intro/outro overlays, watermark removal, AI b-roll, captions, lipsync, etc.), this is the cleanest path.
 
 ---
 
@@ -229,3 +249,8 @@ This repo is focused on AI Clipping only. If you need access to **100+ models** 
 ## License
 
 MIT © 2026
+
+---
+
+<sub>**Keywords:** Opus Clip alternative, Opus Clip ComfyUI, Opus.pro alternative, Klap alternative, Klap.app alternative, Vizard alternative, 2short.ai alternative, free Opus Clip, open-source Opus Clip, AI video clipper, AI clipping, AI clipper for ComfyUI, ComfyUI shorts generator, ComfyUI TikTok generator, ComfyUI Reels generator, viral clip generator, podcast clipper, podcast to shorts, long video to shorts, video highlight extraction, AI highlight extractor, automatic vertical reframing, face-tracked vertical crop, autocrop video, viral score, hook detection, ComfyUI video editing, muapi.ai, YouTube Shorts maker, TikTok clip maker, Instagram Reels maker.</sub>
+
