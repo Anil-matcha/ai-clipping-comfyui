@@ -40,13 +40,13 @@ Underlying API: https://muapi.ai/playground/ai-clipping
 
 ### Via ComfyUI Manager (recommended)
 1. Open **ComfyUI Manager** → **Install via Git URL**
-2. Paste: `https://github.com/Anil-matcha/GPT-3.5-Fine-tuning`
+2. Paste: `https://github.com/Anil-matcha/ai-clipping-comfyui`
 3. Restart ComfyUI
 
 ### Manual
 ```bash
 cd ComfyUI/custom_nodes
-git clone https://github.com/Anil-matcha/GPT-3.5-Fine-tuning ai-clipping-comfyui
+git clone https://github.com/Anil-matcha/ai-clipping-comfyui
 pip install -r ai-clipping-comfyui/requirements.txt
 ```
 
