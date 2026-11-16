@@ -36,7 +36,9 @@ class AiClippingVideoSaver:
             frame_load_cap=0, skip_first_frames=0, select_every_nth=1):
         if not video_url or not video_url.strip().startswith("http"):
             return self._err("Invalid URL")
-        out_dir = os.path.join(folder_paths.get_output_directory(), save_subfolder)
+        out_dir = self._safe_out_dir(save_subfolder, filename_prefix)
+        if out_dir is None:
+            return self._err("save_subfolder and filename_prefix must stay inside the ComfyUI output folder")
         os.makedirs(out_dir, exist_ok=True)
         n = 1
         fp = os.path.join(out_dir, f"{filename_prefix}_{n:05d}.mp4")
@@ -59,6 +61,22 @@ class AiClippingVideoSaver:
         except Exception as e:
             return self._err(str(e))
 
+    @staticmethod
+    def _safe_out_dir(save_subfolder, filename_prefix):
+        """Return the resolved output dir, or None if the inputs escape it."""
+        out_root = os.path.realpath(folder_paths.get_output_directory())
+        out_dir = os.path.realpath(os.path.join(out_root, save_subfolder))
+        try:
+            inside = os.path.commonpath([out_root, out_dir]) == out_root
+        except ValueError:  # e.g. different drives on Windows
+            inside = False
+        if not inside:
+            return None
+        if not filename_prefix or os.path.basename(filename_prefix) != filename_prefix:
+            return None
+        return out_dir
+
+    
     def _load(self, path, cap, skip, nth):
         try:
             import cv2
